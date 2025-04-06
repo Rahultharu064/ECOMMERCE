@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthPlus Pharmacy Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+:root {
+    --primary-color: #4a89dc;
+    --secondary-color: #3bafda;
+    --accent-color: #37bc9b;
+    --dark-color: #434a54;
+    --light-color: #f5f7fa;
+    --danger-color: #ed5565;
+    --warning-color: #ffce54;
+    --success-color: #48cfad;
+    --text-color: #656565;
+    --text-light: #aab2bd;
+    --white: #ffffff;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: #3a70c2;
+    transform: translateY(-2px);
+}
+
+/* Header Styles */
+.pharmacy-header {
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.pharmacy-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 5px 0;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+nav ul li a.active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.header-icons i {
+    margin-left: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.header-icons i:hover {
+    color: var(--primary-color);
+}
+
+/* Blog Hero Section */
+.blog-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.blog-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.blog-hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0 20px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-bar button:hover {
+    background-color: #2da58a;
+}
+
+/* Blog Categories */
+.blog-categories {
+    padding: 60px 0;
+}
+
+.blog-categories h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--dark-color);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.category-card h3 {
+    font-size: 1.1rem;
+}
+
+/* Featured Articles */
+.featured-articles {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.featured-articles h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--dark-color);
+}
+
+.featured-slider {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.featured-article {
+    flex: 1;
+    display: flex;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.article-image {
+    flex: 1;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.article-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.article-content .category {
+    display: inline-block;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.article-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.excerpt {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.article-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.read-more {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.read-more i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.read-more:hover {
+    color: var(--secondary-color);
+}
+
+.read-more:hover i {
+    transform: translateX(3px);
+}
+
+/* All Articles Section */
+.all-articles {
+    padding: 60px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--dark-color);
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-options select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.article-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.article-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.article-info {
+    padding: 20px;
+}
+
+.article-info .category {
+    display: inline-block;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.article-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.article-info .excerpt {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.article-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.pagination button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background-color: var(--white);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pagination button:hover {
+    background-color: var(--light-color);
+}
+
+.pagination button.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+/* Newsletter Section */
+.newsletter {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 60px 0;
+}
+
+.newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.newsletter p {
+    margin-bottom: 30px;
+}
+
+.newsletter-form {
+    display: flex;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    padding: 0 25px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.newsletter-form button:hover {
+    background-color: #2da58a;
+}
+
+/* Footer Styles */
+.pharmacy-footer {
+    background-color: #2c3e50;
+    color: var(--white);
+    padding: 60px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.footer-column p {
+    margin-bottom: 20px;
+    color: #bdc3c7;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #bdc3c7;
+    transition: var(--transition);
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #bdc3c7;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .featured-article {
+        flex-direction: column;
+    }
+    
+    .article-image {
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pharmacy-header .container {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin: 20px 0;
+    }
+    
+    .header-icons {
+        margin-bottom: 10px;
+    }
+    
+    .featured-slider {
+        flex-direction: column;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+    }
+    
+    .search-bar input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .search-bar button {
+        border-radius: 4px;
+        padding: 10px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-form button {
+        border-radius: 4px;
+        padding: 10px;
+    }
+}
+    </style>
+
+</head>
+<body>
+   
+
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Pharmacy Insights & Health Tips</h1>
+            <p>Expert advice from our licensed pharmacists to help you make informed health decisions</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search blog articles...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-categories">
+        <div class="container">
+            <h2>Browse by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" style="background-color: #e3f2fd;">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Heart Health</h3>
+                </div>
+                <div class="category-card" style="background-color: #e8f5e9;">
+                    <i class="fas fa-brain"></i>
+                    <h3>Mental Wellness</h3>
+                </div>
+                <div class="category-card" style="background-color: #fff8e1;">
+                    <i class="fas fa-baby"></i>
+                    <h3>Pediatrics</h3>
+                </div>
+                <div class="category-card" style="background-color: #f3e5f5;">
+                    <i class="fas fa-capsules"></i>
+                    <h3>Medication Guides</h3>
+                </div>
+                <div class="category-card" style="background-color: #e0f7fa;">
+                    <i class="fas fa-allergies"></i>
+                    <h3>Allergies</h3>
+                </div>
+                <div class="category-card" style="background-color: #f1f8e9;">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Nutrition</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-articles">
+        <div class="container">
+            <h2>Featured Articles</h2>
+            <div class="featured-slider">
+                <div class="featured-article">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                        <span class="badge">New</span>
+                    </div>
+                    <div class="article-content">
+                        <span class="category">Medication Guides</span>
+                        <h3>Understanding Antibiotic Resistance: What You Need to Know</h3>
+                        <p class="excerpt">Learn how improper use of antibiotics contributes to resistance and what you can do to help combat this growing public health concern.</p>
+                        <div class="article-meta">
+                            <span class="author">Dr. Sarah Johnson</span>
+                            <span class="date">June 15, 2023</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="featured-article">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                        <span class="badge">Popular</span>
+                    </div>
+                    <div class="article-content">
+                        <span class="category">Nutrition</span>
+                        <h3>The Role of Probiotics in Gut Health: Science-Backed Benefits</h3>
+                        <p class="excerpt">Discover how probiotics can improve your digestive health and learn which strains are most effective for different conditions.</p>
+                        <div class="article-meta">
+                            <span class="author">Dr. Michael Chen</span>
+                            <span class="date">May 28, 2023</span>
+                            <span class="read-time">7 min read</span>
+                        </div>
+                        <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-articles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <div class="sort-options">
+                    <span>Sort by:</span>
+                    <select id="sort-articles">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1630&q=80');"></div>
+                    <div class="article-info">
+                        <span class="category">Mental Wellness</span>
+                        <h3>Managing Anxiety: Medication and Non-Medication Approaches</h3>
+                        <p class="excerpt">Explore both pharmaceutical and holistic methods for managing anxiety disorders effectively.</p>
+                        <div class="article-meta">
+                            <span class="date">June 10, 2023</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="article-info">
+                        <span class="category">Pediatrics</span>
+                        <h3>Children's Vaccination Schedule: A Parent's Guide</h3>
+                        <p class="excerpt">A comprehensive overview of recommended vaccinations for children from birth through adolescence.</p>
+                        <div class="article-meta">
+                            <span class="date">June 5, 2023</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="article-info">
+                        <span class="category">Nutrition</span>
+                        <h3>Diabetes-Friendly Diet: Foods to Embrace and Avoid</h3>
+                        <p class="excerpt">Learn how to make smart food choices to help manage blood sugar levels effectively.</p>
+                        <div class="article-meta">
+                            <span class="date">May 30, 2023</span>
+                            <span class="read-time">9 min read</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="article-info">
+                        <span class="category">Heart Health</span>
+                        <h3>Blood Pressure Medications: Types and Side Effects</h3>
+                        <p class="excerpt">A detailed look at common blood pressure medications and what to expect when taking them.</p>
+                        <div class="article-meta">
+                            <span class="date">May 22, 2023</span>
+                            <span class="read-time">7 min read</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                    <div class="article-info">
+                        <span class="category">Allergies</span>
+                        <h3>Seasonal Allergies: Prevention and Treatment Options</h3>
+                        <p class="excerpt">How to prepare for allergy season and choose the right treatment for your symptoms.</p>
+                        <div class="article-meta">
+                            <span class="date">May 15, 2023</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1579165466740-5041e3176e28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80');"></div>
+                    <div class="article-info">
+                        <span class="category">Medication Guides</span>
+                        <h3>How to Properly Store Your Medications</h3>
+                        <p class="excerpt">Learn the do's and don'ts of medication storage to ensure effectiveness and safety.</p>
+                        <div class="article-meta">
+                            <span class="date">May 10, 2023</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with Health Insights</h2>
+                <p>Subscribe to our newsletter for the latest pharmacy news, health tips, and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <script src="script.js">document.addEventListener('DOMContentLoaded', function() {
+        // Mobile menu toggle (would need to add menu button in HTML for mobile)
+        const mobileMenuButton = document.createElement('button');
+        mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileMenuButton.classList.add('mobile-menu-button');
+        document.querySelector('.pharmacy-header .container').prepend(mobileMenuButton);
+        
+        mobileMenuButton.addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('show');
+        });
+        
+        // Sort articles functionality
+        const sortSelect = document.getElementById('sort-articles');
+        if (sortSelect) {
+            sortSelect.addEventListener('change', function() {
+                const articlesGrid = document.querySelector('.articles-grid');
+                const articles = Array.from(document.querySelectorAll('.article-card'));
+                
+                articles.sort((a, b) => {
+                    const dateA = new Date(a.querySelector('.date').textContent);
+                    const dateB = new Date(b.querySelector('.date').textContent);
+                    
+                    if (this.value === 'newest') {
+                        return dateB - dateA;
+                    } else if (this.value === 'oldest') {
+                        return dateA - dateB;
+                    } else {
+                        // For 'popular' we might need actual data, this is just a placeholder
+                        const readTimeA = parseInt(a.querySelector('.read-time').textContent);
+                        const readTimeB = parseInt(b.querySelector('.read-time').textContent);
+                        return readTimeB - readTimeA;
+                    }
+                });
+                
+                // Clear and re-append sorted articles
+                articlesGrid.innerHTML = '';
+                articles.forEach(article => {
+                    articlesGrid.appendChild(article);
+                });
+            });
+        }
+        
+        // Featured articles slider (simplified version)
+        let currentSlide = 0;
+        const featuredArticles = document.querySelectorAll('.featured-article');
+        const totalSlides = featuredArticles.length;
+        
+        function showSlide(index) {
+            featuredArticles.forEach((article, i) => {
+                article.style.display = i === index ? 'flex' : 'none';
+            });
+        }
+        
+        // Initialize slider
+        if (totalSlides > 1) {
+            showSlide(0);
+            
+            // Auto-advance slides every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+        
+        // Category card hover effects
+        const categoryCards = document.querySelectorAll('.category-card');
+        categoryCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('i');
+                icon.style.transform = 'scale(1.1)';
+                icon.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('i');
+                icon.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value.trim();
+                
+                if (email && validateEmail(email)) {
+                    // Here you would typically send the data to your server
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
+        
+        // Email validation helper function
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    });
+        // Font Awesome icons
+        const script = document.createElement('script');
+        script.src = 'https://kit.fontawesome.com/a076d05399.js';
+        script.crossOrigin = 'anonymous';
+        document.head.appendChild(script);
+
+    </script>
+    </script>
+</body>
+</html>

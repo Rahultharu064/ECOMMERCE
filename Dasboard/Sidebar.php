@@ -1,40 +1,40 @@
 <sidebar class="sidebar">
-        <div class="section">
-          <h2>ADMIN DASHBOARD</h2>
-          <a href="./dasboard.php">
-            <i data-lucide="bar-chart-3"></i>
-            Dashboard
-          </a>
-        </div>
-        <div class="section">
-          <h2>ACTIONS</h2>
-          <a href="./productsadd.php">
-            <i data-lucide="box"></i>
-           Product Management
-          </a>
-          <a href="/users">
-            <i data-lucide="users"></i>
-            User Management
-          </a>
-          <a href="/orders">
-            <i data-lucide="shopping-cart"></i>
-            Order Management
-          </a>
-          <a href="/customers">
-            <i data-lucide="users"></i>
-            Registered Customer
-          </a>
-          <a href="/sales">
-            <i data-lucide="bar-chart-3"></i>
-            Sales
-          </a>
-          <a href="/feedback">
-            <i data-lucide="message-square"></i>
-            Feedback
-          </a>
-          <a href="#" id="logout">
-            <i data-lucide="log-out"></i>
-            Logout
-          </a>
-        </div>
+  <div class="section">
+    <h2>ADMIN DASHBOARD</h2>
+    <a href="../Dasboard/dasboard.php">
+      <i class="fas fa-chart-bar"></i>
+      Dashboard
+    </a>
+  </div>
+  <div class="section">
+    <h2>ACTIONS</h2>
+    <a href="../Dasboard/productsdisplay.php">
+      <i class="fas fa-box"></i>
+     Product Management
+    </a>
+    <a href="../Dasboard/admin_dasboard.php">
+      <i class="fas fa-users"></i>
+      User Management
+    </a>
+    <a href="../frontend/pharmacist_orders.php">
+      <i class="fas fa-shopping-cart"></i>
+      Order Management
+    </a>
+    <a href="/customers">
+      <i class="fas fa-user-friends"></i>
+      Registered Customer
+    </a>
+    <a href="/sales">
+      <i class="fas fa-chart-line"></i>
+      Sales
+    </a>
+    <a href="/feedback">
+      <i class="fas fa-comment-dots"></i>
+      Feedback
+    </a>
+    <a href="#" id="logout">
+      <i class="fas fa-sign-out-alt"></i>
+      Logout
+    </a>
+  </div>
       </sidebar>

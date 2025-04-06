@@ -1,0 +1,132 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 440px auto;
+    padding: 20px;
+}
+
+/* Consultation Banner */
+.consultation-banner {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 4rem auto;
+    max-width: 1200px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.consultation-content {
+    padding: 3rem;
+    flex: 1;
+}
+
+.consultation-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.consultation-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.consultation-features {
+    list-style-type: none;
+    padding: 0;
+}
+
+.consultation-features li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.consultation-features i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.consult-button, .action-button {
+    background-color: #2065d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.consult-button:hover, .action-button:hover {
+    background-color: #1650a8;
+}
+
+.consultation-image {
+    flex: 1;
+    background: url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800') center/cover;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(32, 101, 209, 0.6);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .consultation-banner {
+        flex-direction: column;
+    }
+
+    .consultation-content {
+        padding: 2rem;
+    }
+
+    .consultation-image {
+        min-height: 300px;
+    }
+}

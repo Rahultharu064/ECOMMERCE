@@ -101,7 +101,7 @@ while ($row = mysqli_fetch_assoc($cat_result)) {
         /* Main Content Layout */
         .main-container {
             max-width: 1200px;
-            margin: 260px auto;
+            margin: 180px auto;
             padding: 1rem 20px;
         }
 
@@ -314,7 +314,7 @@ while ($row = mysqli_fetch_assoc($cat_result)) {
         }
 
         .btn-cart {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary-hover);
             color: white;
             border: 1px solid var(--secondary-color);
         }
@@ -422,6 +422,7 @@ while ($row = mysqli_fetch_assoc($cat_result)) {
 </head>
 <body>
     <?php include '../includes/header.php'; ?>
+    <?php include '../frontend/chatbot.php'; ?>
 
    
 

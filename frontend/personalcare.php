@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../includes/config.php';
-include '../includes/header.php';
+
 
 // Set category for Personal Care
 $category_id = 11; // Change to your actual category ID for Personal Care

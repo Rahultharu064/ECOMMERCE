@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../includes/config.php';
 
 // Check if user is logged in as admin
 // if (!isset($_SESSION['admin_logged_in']) {
@@ -15,7 +16,7 @@ if ($db->connect_error) {
 }
 
 // Fetch categories for dropdown
-$catego_query = "SELECT * FROM catego";
+$catego_query = "SELECT * FROM cat";
 $catego_result = $db->query($catego_query);
 
 // Handle form submission
@@ -33,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Handle image upload
     $image_url = '';
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = 'uploads/';
+        $upload_dir = '../Dasboard/uploads/';
         if (!is_dir($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     
     // Insert into database
-    $insert_query = "INSERT INTO articles (title, excerpt, content, image_url, catego_id, author, publish_date, read_time, is_featured, is_new) 
+    $insert_query = "INSERT INTO art (title, excerpt, content, image_url, catego_id, author, publish_date, read_time, is_featured, is_new) 
                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $db->prepare($insert_query);
     $stmt->bind_param("ssssissiii", $title, $excerpt, $content, $image_url, $catego_id, $author, $publish_date, $read_time, $is_featured, $is_new);
@@ -195,7 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 
                 <button type="submit" class="btn btn-submit">Create Article</button>
-                <a href="admin_dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
+                <a href="../Dasboard/admin_dasboard.php" class="btn btn-secondary">Back to Dashboard</a>
             </form>
         </div>
     </div>

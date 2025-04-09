@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../includes/config.php';
-include '../includes/header.php';
+
 
 // Set category for Vitamins
 $category_id = 16; // Change to your actual category ID for Vitamins

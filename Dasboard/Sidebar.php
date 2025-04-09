@@ -1,40 +1,40 @@
-<sidebar class="sidebar">
+<sidebar class="sidebar" id="sidebar">
   <div class="section">
     <h2>ADMIN DASHBOARD</h2>
     <a href="../Dasboard/dasboard.php">
       <i class="fas fa-chart-bar"></i>
-      Dashboard
+      <span>Dashboard</span>
     </a>
   </div>
   <div class="section">
     <h2>ACTIONS</h2>
     <a href="../Dasboard/productsdisplay.php">
       <i class="fas fa-box"></i>
-     Product Management
+      <span>Product Management</span>
     </a>
     <a href="../Dasboard/admin_dasboard.php">
       <i class="fas fa-users"></i>
-      User Management
+      <span>User Management</span>
     </a>
     <a href="../frontend/pharmacist_orders.php">
       <i class="fas fa-shopping-cart"></i>
-      Order Management
+      <span>Order Management</span>
     </a>
     <a href="/customers">
       <i class="fas fa-user-friends"></i>
-      Registered Customer
+      <span>Registered Customer</span>
     </a>
-    <a href="/sales">
+    <a href="../includes/appointments.php">
       <i class="fas fa-chart-line"></i>
-      Sales
+      <span>Appointments</span>
     </a>
     <a href="/feedback">
       <i class="fas fa-comment-dots"></i>
-      Feedback
+      <span>Feedback</span>
     </a>
     <a href="#" id="logout">
       <i class="fas fa-sign-out-alt"></i>
-      Logout
+      <span>Logout</span>
     </a>
   </div>
-      </sidebar>
+</sidebar>

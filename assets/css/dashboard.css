@@ -94,7 +94,29 @@ body {
     width: 80%;
     padding: 10px;
   }
-
+  .sidebar {
+    width: 250px;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar.collapsed {
+    width: 70px;
+  }
+  
+  .sidebar.collapsed h2,
+  .sidebar.collapsed span {
+    display: none;
+  }
+  
+  .toggle-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #fff;
+  }
+  
   /* Card Styles */
   .card {
     background-color: white;

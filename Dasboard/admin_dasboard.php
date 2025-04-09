@@ -13,6 +13,9 @@ $sql = "SELECT id, name, email, phone, gender, dob, address, province, city,
                role, IFNULL(status, 'active') as status, created_at, updated_at 
         FROM users ORDER BY created_at DESC";
 $result = mysqli_query($conn, $sql);
+if (!$result) {
+    die("Error executing query: " . mysqli_error($conn));
+}
 $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 

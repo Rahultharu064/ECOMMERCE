@@ -11,8 +11,8 @@ $article_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 // Fetch article
 $article_query = "SELECT a.*, c.name as catego_name 
-                 FROM articles a 
-                 JOIN catego c ON a.catego_id = c.id 
+                 FROM art a 
+                 JOIN cat c ON a.catego_id = c.id 
                  WHERE a.id = ?";
 $stmt = $db->prepare($article_query);
 $stmt->bind_param("i", $article_id);
@@ -21,15 +21,15 @@ $article = $stmt->get_result()->fetch_assoc();
 
 // Increment view count if article exists
 if ($article) {
-    $update_views = "UPDATE articles SET views = views + 1 WHERE id = ?";
+    $update_views = "UPDATE art SET views = views + 1 WHERE id = ?";
     $stmt = $db->prepare($update_views);
     $stmt->bind_param("i", $article_id);
     $stmt->execute();
 
     // Fetch related articles (same category, excluding current article)
     $related_query = "SELECT a.*, c.name as catego_name 
-                     FROM articles a 
-                     JOIN catego c ON a.catego_id = c.id 
+                     FROM art a 
+                     JOIN cat c ON a.catego_id = c.id 
                      WHERE a.catego_id = ? AND a.id != ?
                      ORDER BY a.publish_date DESC 
                      LIMIT 3";

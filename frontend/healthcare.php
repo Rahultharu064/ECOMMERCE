@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../includes/config.php';
-include '../includes/header.php';
+
 
 // Set category for Healthcare
 $category_id = 10; // Change to your actual category ID for Healthcare

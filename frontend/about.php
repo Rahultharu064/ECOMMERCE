@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About PharmaCare - Your Trusted Online Pharmacy</title>
+    <link rel="stylesheet" href="../assets/css/pharmacy.css">
     <style>
         :root {
             --primary-color: #2a7fba;
@@ -60,7 +61,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(42, 127, 186, 0.8), rgba(42, 127, 186, 0.8)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                         url('https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
@@ -298,15 +299,10 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo">Pharma<span>Care</span></a>
-            <nav>
-                <a href="about.html" class="active">About Us</a>
-                <!-- Add other navigation links as needed -->
-            </nav>
-        </div>
-    </header>
+     <?php
+     include '../includes/header.php'
+     ?>
+   
 
     <!-- Hero Section -->
     <section class="hero">
@@ -334,64 +330,9 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose PharmaCare?</h2>
-                <p>We combine pharmaceutical expertise with cutting-edge technology to deliver exceptional service</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Verified Medications</h3>
-                    <p>All our products are sourced from licensed manufacturers and undergo strict quality checks to ensure safety and efficacy.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>24/7 Pharmacy Support</h3>
-                    <p>Our licensed pharmacists are available round the clock to answer your questions and provide professional advice.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3>Fast & Discreet Delivery</h3>
-                    <p>Get your medications delivered quickly in plain packaging to maintain your privacy. Same-day delivery available in select areas.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-prescription-bottle-alt"></i>
-                    </div>
-                    <h3>Easy Prescription Management</h3>
-                    <p>Upload, store, and refill prescriptions with ease through our secure online platform or mobile app.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
-                    <h3>Comprehensive Product Range</h3>
-                    <p>From prescription medications to wellness products, we carry over 10,000 healthcare items to meet all your needs.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Health & Wellness Programs</h3>
-                    <p>Access our exclusive health programs, discounts on chronic medications, and personalized wellness plans.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   <?php
+   include '../frontend/services.php'
+    ?>
 
     <!-- Team Section -->
     <section class="team-section">
@@ -440,50 +381,8 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-column">
-                    <h3>PharmaCare</h3>
-                    <p>Your trusted online pharmacy for quality medications and healthcare products delivered with care and professionalism.</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Online Prescriptions</a></li>
-                        <li><a href="#">Medicine Delivery</a></li>
-                        <li><a href="#">Health Consultations</a></li>
-                        <li><a href="#">Vaccinations</a></li>
-                        <li><a href="#">Health Checks</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Health Street, MedCity</li>
-                        <li><i class="fas fa-phone"></i> (800) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@pharmacare.com</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 PharmaCare. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
+     <?php include '../includes/footer.php'
+     ?>
+   
 </body>
 </html>

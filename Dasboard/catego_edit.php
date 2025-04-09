@@ -1,14 +1,11 @@
 <?php
 session_start();
+include '../includes/config.php';
 
-// Check if user is logged in as admin
-if (!isset($_SESSION['admin_logged_in'])) {
-    header('Location: admin_login.php');
-    exit;
-}
+
 
 // Database connection
-$db = new mysqli('localhost', 'username', 'password', 'pharmacy_blog');
+$db = new mysqli($host, $username, $password, $dbname, $port);
 
 // Check connection
 if ($db->connect_error) {
@@ -19,7 +16,7 @@ if ($db->connect_error) {
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 // Fetch category data
-$catego_query = "SELECT * FROM catego WHERE id = ?";
+$catego_query = "SELECT * FROM cat WHERE id = ?";
 $stmt = $db->prepare($catego_query);
 $stmt->bind_param("i", $id);
 $stmt->execute();
@@ -38,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $bg_color = $db->real_escape_string($_POST['bg_color']);
     
     // Update in database
-    $update_query = "UPDATE catego SET name = ?, icon = ?, bg_color = ? WHERE id = ?";
+    $update_query = "UPDATE cat SET name = ?, icon = ?, bg_color = ? WHERE id = ?";
     $stmt = $db->prepare($update_query);
     $stmt->bind_param("sssi", $name, $icon, $bg_color, $id);
     
@@ -58,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Category</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>

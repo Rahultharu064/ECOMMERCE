@@ -1,7 +1,11 @@
 <?php
 session_start();
 include '../includes/config.php';
-include '../includes/header.php';
+
+// Check database connection
+if (!$conn || $conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
 
 // Set category for Lab Tests
 $category_id = 14; // Change to your actual category ID for Lab Tests
@@ -13,6 +17,12 @@ $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $limit = 12;
 $offset = ($page - 1) * $limit;
 
+// Initialize products array
+$products = [];
+$total_products = 0;
+$total_pages = 1;
+
+// Build and execute main query
 $query = "SELECT p.*, c.categories_name 
           FROM products p 
           LEFT JOIN categories c ON p.category_id = c.id 
@@ -25,9 +35,12 @@ if (!empty($search)) {
 $query .= " LIMIT $limit OFFSET $offset";
 $result = mysqli_query($conn, $query);
 
-$products = [];
-while ($row = mysqli_fetch_assoc($result)) {
-    $products[] = $row;
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $products[] = $row;
+    }
+} else {
+    die("Query failed: " . mysqli_error($conn));
 }
 
 // Get total count for pagination
@@ -36,15 +49,23 @@ if (!empty($search)) {
     $count_query .= " AND (product_name LIKE '%$search%' OR description LIKE '%$search%')";
 }
 $count_result = mysqli_query($conn, $count_query);
-$total_products = mysqli_fetch_assoc($count_result)['total'];
-$total_pages = ceil($total_products / $limit);
+
+if ($count_result) {
+    $total_products = mysqli_fetch_assoc($count_result)['total'];
+    $total_pages = ceil($total_products / $limit);
+} else {
+    die("Count query failed: " . mysqli_error($conn));
+}
 
 // Get all categories for navigation
 $categories = [];
 $cat_query = "SELECT id, categories_name FROM categories";
 $cat_result = mysqli_query($conn, $cat_query);
-while ($row = mysqli_fetch_assoc($cat_result)) {
-    $categories[] = $row;
+
+if ($cat_result) {
+    while ($row = mysqli_fetch_assoc($cat_result)) {
+        $categories[] = $row;
+    }
 }
 ?>
 
@@ -163,7 +184,11 @@ while ($row = mysqli_fetch_assoc($cat_result)) {
             <?php endif; ?>
         </section>
     </main>
-    <?php include '../includes/footer.php'; ?>
+    <?php 
+    include '../includes/footer.php';
+    // Close the database connection
+    mysqli_close($conn);
+    ?>
     
     <script>
         function addToCart(productId) {

@@ -1,8 +1,16 @@
+ 
+ 
+ <?php
+ include 'config.php';
+ include '../frontend/chabot.php';
+?>
+ 
+ 
  <!-- Top Bar -->
  <div class="top-bar">
         <div class="top-bar-container">
             <div class="contact-info">
-                <a href="tel:9815760082"><i class="fas fa-phone"></i> 1-800-123-4567</a>
+                <a href="tel:9815760082"><i class="fas fa-phone"></i> 9815760082</a>
                 <a href="mailto:support@pharmacare.com"><i class="fas fa-envelope"></i> support@pharmacare.com</a>
             </div>
             <div class="top-bar-right">
@@ -106,6 +114,7 @@
     <ul class="account-dropdown">
         <li class="dropdown-item"><a href="login.php" class="dropdown-link">Login</a></li>
         <li class="dropdown-item"><a href="../signup.php" class="dropdown-link">Sign Up</a></li>
+        <li class="dropdown-item"><a href="../includes/logout.php" class="dropdown-link">Logout</a></li>
     </ul>
 </div>
                 <div class="icon-item">
@@ -116,7 +125,7 @@
                 </div>
                 <div class="icon-item cart">
                     <i class="fas fa-shopping-cart"></i>
-                    <a href="../frontend/product_details.php" class="cart-link">Cart
+                    <a href="../frontend/cart.php" class="cart-link">Cart
                         <span class="cart-count">0</span>
                     </a>
                 </div>

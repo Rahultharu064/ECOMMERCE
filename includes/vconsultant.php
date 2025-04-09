@@ -25,7 +25,7 @@
                     <li><i class="fas fa-bell" style="color: #2065d1;"></i> Medication Reminders</li>
                     <li><i class="fas fa-heartbeat" style="color: #2065d1;"></i> Personalized Health Tips</li>
                 </ul>
-                <button class="consult-button" onclick="window.location.href='book.php'">Book Now</button>
+                <button class="consult-button" onclick="window.location.href='../includes/book.php'">Book Now</button>
                 <button class="action-button" onclick="window.location.href='chatwith.php'"><i class="fas fa-comments"></i> Live Chat</button>
                 <button class="action-button" onclick="window.location.href='set_reminder.php"><i class="fas fa-bell"></i> Set Reminder</button>
             </div>

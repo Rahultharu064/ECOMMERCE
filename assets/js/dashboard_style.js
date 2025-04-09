@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
   mobileMenuButton.addEventListener('click', function() {
       document.querySelector('nav').classList.toggle('show');
   });
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('sidebar');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+    });
+  });
   
   // Sort articles functionality
   const sortSelect = document.getElementById('sort-articles');

@@ -1,7 +1,16 @@
 <?php
 session_start();
 include '../includes/config.php';
-include '../includes/header.php';
+
+if (!$conn || $conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
+
+// Ensure the connection is not closed prematurely
+if ($conn->ping() === false) {
+    die("Database connection is not active.");
+}
+
 
 // Set category for Medicines
 $category_id = 15; // Change to your actual category ID for Medicines

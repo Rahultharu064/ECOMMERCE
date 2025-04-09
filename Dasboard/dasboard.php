@@ -4,7 +4,7 @@ require '../includes/config.php';
 
 // Check if user is logged in and is a pharmacist
 if (!isset($_SESSION['user_id']) || ($_SESSION['user_role'] ?? '') !== 'pharmacist') {
-    header("Location: login.php");
+    header("Location: ../frontend/login.php");
     exit();
 }
 

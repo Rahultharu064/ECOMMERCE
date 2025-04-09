@@ -14,7 +14,7 @@ if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
     
     // Check if category is being used by any articles
-    $check_query = "SELECT COUNT(*) FROM articles WHERE catego_id = ?";
+    $check_query = "SELECT COUNT(*) FROM art WHERE catego_id = ?";
     $stmt = $conn->prepare($check_query);
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -23,7 +23,7 @@ if (isset($_GET['delete'])) {
     if ($count > 0) {
         $_SESSION['error_message'] = "Cannot delete category - it is being used by $count article(s).";
     } else {
-        $delete_query = "DELETE FROM catego WHERE id = ?";
+        $delete_query = "DELETE FROM cat WHERE id = ?";
         $stmt = $conn->prepare($delete_query);
         $stmt->bind_param("i", $id);
         
@@ -38,7 +38,7 @@ if (isset($_GET['delete'])) {
 }
 
 // Fetch all categories
-$catego_query = "SELECT * FROM catego ORDER BY name ASC";
+$catego_query = "SELECT * FROM cat ORDER BY name ASC";
 $catego_result = $conn->query($catego_query);
 ?>
 
@@ -48,8 +48,10 @@ $catego_result = $conn->query($catego_query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Categories</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
     <?php include 'Navbar.php'; ?>

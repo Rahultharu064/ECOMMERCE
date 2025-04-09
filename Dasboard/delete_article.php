@@ -21,7 +21,7 @@ $article_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($article_id > 0) {
     // First get the image path to delete the file
-    $image_query = "SELECT image_url FROM articles WHERE id = ?";
+    $image_query = "SELECT image_url FROM art WHERE id = ?";
     $stmt = $db->prepare($image_query);
     $stmt->bind_param("i", $article_id);
     $stmt->execute();
@@ -29,7 +29,7 @@ if ($article_id > 0) {
     $article = $result->fetch_assoc();
     
     // Delete from database
-    $delete_query = "DELETE FROM articles WHERE id = ?";
+    $delete_query = "DELETE FROM art WHERE id = ?";
     $stmt = $db->prepare($delete_query);
     $stmt->bind_param("i", $article_id);
     

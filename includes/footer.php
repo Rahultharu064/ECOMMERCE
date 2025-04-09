@@ -16,7 +16,7 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="../frontend/about.php">About Us</a></li>
                     <li><a href="#">Our Services</a></li>
                     <li><a href="#">Health Blog</a></li>
                     <li><a href="#">Store Locator</a></li>
@@ -26,7 +26,7 @@
             <div class="footer-section">
                 <h3>Customer Service</h3>
                 <ul>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="../includes/contactus.php">Contact Us</a></li>
                     <li><a href="#">Shipping Policy</a></li>
                     <li><a href="#">Return Policy</a></li>
                     <li><a href="#">FAQ</a></li>

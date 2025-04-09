@@ -96,12 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     exit();
                     
                 case 'esewa':
-                    // Implement eSewa payment redirection here
-                    // header("Location: esewa_payment.php");
-                    // exit();
-                    // For now, just mark as paid
-                    unset($_SESSION['cart']);
-                    header("Location: order_success.php?order_id=" . $order_id);
+                    header("Location: esewa_payment.php?order_id=" . $order_id);
                     exit();
                     
                 case 'card':

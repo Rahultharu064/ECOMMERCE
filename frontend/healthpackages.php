@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../includes/config.php';
-include '../includes/header.php';
+
 
 // Set category for Health Packages
 $category_id = 13; // Change to your actual category ID for Health Packages

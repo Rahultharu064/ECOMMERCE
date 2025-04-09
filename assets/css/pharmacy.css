@@ -47,16 +47,11 @@ body {
 }
 
 .logo i {
-    margin-right: 12px;
+    margin-right: 10px;
     font-size: 32px;
 }
 
-.search-bar {
-    flex: 1;
-    max-width: 600px;
-    margin: 0;
-    position: relative;
-}
+
 /* BMI Calculator Icon */
 .icon-item.bmi-calculator {
     position: relative;
@@ -360,7 +355,7 @@ body {
 
 /* Hero Section Styles */
 .hero {
-    margin-top: 250px;
+    margin-top: 200px;
     padding: 40px 20px;
     background: #f8f9fa;
 }

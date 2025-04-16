@@ -2,7 +2,7 @@
  
  <?php
  include 'config.php';
- include '../frontend/chabot.php';
+ 
 ?>
  
  

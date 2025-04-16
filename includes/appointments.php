@@ -42,13 +42,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Admin Panel - Manage Appointments</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
 <body>
+    <?php include '../Dasboard/Navbar.php'; ?>
+    <?php include '../Dasboard/Sidebar.php'; ?>
+    
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>Manage Appointments</h1>
-        <a href="dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
+        <a href="../Dasboard/dasboard.php" class="btn btn-secondary">Back to Dashboard</a>
     </div>
 
     <div class="card">
@@ -73,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php while ($appointment = mysqli_fetch_assoc($appointmentsResult)): ?>
                         <tr>
                             <td><?php echo $appointment['id']; ?></td>
-                            <td><?php echo $appointment['doctor_first_name'] . ' ' . $appointment['doctor_last_name']; ?></td>
+                            <td>Dr.<?php echo $appointment['doctor_first_name'] . ' ' . $appointment['doctor_last_name']; ?></td>
                             <td><?php echo $appointment['patient_name']; ?></td>
                             <td><?php echo $appointment['appointment_date']; ?></td>
                             <td><?php echo $appointment['appointment_time']; ?></td>

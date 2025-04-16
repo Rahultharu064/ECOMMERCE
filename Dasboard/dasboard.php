@@ -1,12 +1,12 @@
 <?php
-session_start();
+
 require '../includes/config.php';
 
 // Check if user is logged in and is a pharmacist
-if (!isset($_SESSION['user_id']) || ($_SESSION['user_role'] ?? '') !== 'pharmacist') {
-    header("Location: ../frontend/login.php");
-    exit();
-}
+// if (!isset($_SESSION['user_id']) || ($_SESSION['user_role'] ?? '') !== 'pharmacist') {
+//     header("Location: ../frontend/login.php");
+//     exit();
+// }
 
 // Initialize all variables with default values
 $categories_count = 0;
@@ -603,16 +603,7 @@ if ($result && $result->num_rows > 0) {
     </div>
 
     <!-- Charts Section -->
-    <div class="chart-row">
-      <!-- Top Categories Chart -->
-      <div class="chart-card">
-        <h3>Top Selling Categories</h3>
-        <div class="chart-wrapper">
-          <canvas id="categoriesChart"></canvas>
-        </div>
-        <div class="chart-legend" id="categoriesLegend"></div>
-      </div>
-
+    
       <!-- Revenue Chart -->
       <div class="chart-card">
         <h3>Monthly Revenue (Last 6 Months)</h3>

@@ -1,0 +1,193 @@
+:root {
+    --primary-color: #2a7fba;
+    --secondary-color: #1a5276;
+    --accent-color: #e74c3c;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --font-main: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 90%;
+  }
+  
+  .card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+  }
+  
+  .logo {
+    width: 120px;
+    margin-bottom: 1.5rem;
+  }
+  
+  h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+  }
+  
+  input[type="email"],
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="email"]:focus,
+  input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 127, 186, 0.2);
+  }
+  
+  .btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  
+  .otp-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .otp-input {
+    width: 15%;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+  }
+  
+  .otp-input:focus {
+    border-color: var(--primary-color);
+  }
+  
+  .message {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+  
+  .success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+    border-left: 4px solid var(--success-color);
+  }
+  
+  .error {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--accent-color);
+    border-left: 4px solid var(--accent-color);
+  }
+  
+  .footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  /* Pharmaceutical theme enhancements */
+  .pharma-icon {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .security-note {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .card {
+      padding: 1.5rem;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .otp-input {
+      width: 14%;
+      height: 45px;
+    }
+  }

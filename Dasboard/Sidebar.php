@@ -20,19 +20,13 @@
       <i class="fas fa-shopping-cart"></i>
       <span>Order Management</span>
     </a>
-    <a href="/customers">
-      <i class="fas fa-user-friends"></i>
-      <span>Registered Customer</span>
-    </a>
+  
     <a href="../includes/appointments.php">
       <i class="fas fa-chart-line"></i>
       <span>Appointments</span>
     </a>
-    <a href="/feedback">
-      <i class="fas fa-comment-dots"></i>
-      <span>Feedback</span>
-    </a>
-    <a href="#" id="logout">
+    
+    <a href="../includes/logout.php" id="logout">
       <i class="fas fa-sign-out-alt"></i>
       <span>Logout</span>
     </a>

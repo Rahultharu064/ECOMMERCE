@@ -1,5 +1,6 @@
 <?php
-session_start();
+// session_start();
+
 include '../includes/config.php';
 
 // Handle product deletion
